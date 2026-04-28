@@ -10,7 +10,7 @@ type TimerPreset = {
 };
 
 const PRESETS: TimerPreset[] = [
-  { id: '1', label: '1 Jam', seconds: 3600 },
+  { id: '1', label: '1 Menit', seconds: 60 },
   { id: '2', label: '2 Jam', seconds: 7200 },
   { id: '3', label: '3 Jam', seconds: 10800 },
   { id: '4', label: '4 Jam', seconds: 14400 },
@@ -282,9 +282,14 @@ export default function App() {
             <div className="flex justify-between items-start mb-8">
               <div className="flex items-center gap-3">
                 <div className={`w-3 h-3 rounded-full ${isWarningTime ? 'bg-red-500 animate-pulse shadow-[0_0_8px_#EF4444]' : 'bg-brand-accent shadow-[0_0_8px_#22C55E]'} animate-pulse`} />
-                <span className="text-[#8E9299] text-[10px] font-bold tracking-[0.2em] uppercase">
-                  Sistem Hachiko v1.5 • {isActive ? 'Berjalan' : 'Jeda'}
-                </span>
+                <div className="flex flex-col">
+                  <span className="text-[#8E9299] text-[10px] font-bold tracking-[0.2em] uppercase leading-tight">
+                    Sistem Hachiko v1.5 • {isActive ? 'Berjalan' : 'Jeda'}
+                  </span>
+                  <span className="text-brand-accent/50 text-[8px] font-bold tracking-[0.3em] uppercase mt-0.5">
+                    Ary Computer
+                  </span>
+                </div>
               </div>
               {timeLeft !== null && !isMinimized && (
                 <button 
